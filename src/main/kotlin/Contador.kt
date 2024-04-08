@@ -1,6 +1,9 @@
 open class Contador {
 
-    var contador:Int = 0
+    var contador:Int
+    constructor(contador:Int ) {
+        this.contador = contador
+    }
 
     fun incrementar () {
         this.contador++

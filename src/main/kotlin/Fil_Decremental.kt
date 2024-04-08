@@ -1,7 +1,8 @@
 import java.lang.Thread.sleep
 import kotlin.random.Random
 
-class Fil_Decremental : Contador(), Runnable {
+class Fil_Decremental (contador: Contador) : Thread(), Runnable {
+    var contador:Contador = contador
     override fun run() {
         println("Aquest és el fil " + Thread.currentThread().name + " que començo ara.")
         val rnd = Random
@@ -12,8 +13,8 @@ class Fil_Decremental : Contador(), Runnable {
             } catch (ex: InterruptedException) {
                 println("Error")
             }
-            decrementar()
-            println("El contador es: " + tronarValor())
+            contador.decrementar()
+            println("El contador es: " + contador.tronarValor())
         }
     }
 }
