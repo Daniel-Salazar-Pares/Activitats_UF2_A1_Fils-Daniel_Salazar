@@ -15,7 +15,7 @@ class Fil_Incremental(contador: Contador) : Thread(), Runnable {
                 println("Error")
             }
             contador.incrementar()
-            println("El contador es: " + contador.tronarValor())
+            println("Aquest és el fil " + Thread.currentThread().name +", el contador es: " + contador.tronarValor())
         }
     }
 
